@@ -28,6 +28,13 @@ final class Movie: Model, Content {
     @Field(key: "title")
     var title: String
     
+    // hasMany - Movie has many reviews
+    @Children(for: \.$movie)
+    var reviews: [Review]
+    
+    @Siblings(through: MovieActor.self, from: \.$movie, to: \.$actor)
+    var actors: [Actor]
+    
     init(){
         
     }
