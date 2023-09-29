@@ -23,6 +23,7 @@ public func configure(_ app: Application) async throws {
     app.migrations.add(CreateReview())
     app.migrations.add(CreateActor())
     app.migrations.add(CreateMovieActor())
+    app.migrations.add(AddPosterColumnToMovies())
 
     // register routes
     try routes(app)
